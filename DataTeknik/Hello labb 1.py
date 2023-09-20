@@ -9,7 +9,7 @@ def g(g1, q, n): #geometic_series
         return series_sum
     return (sum_gs)
 
-while True:
+while 0==0:
     a1 = input("What is the first term(a1)?")
     d = input("What is the difference(d)?")
     n = input("what is the number(n) of terms?")
@@ -22,5 +22,3 @@ while True:
     result_gs = g(g1, q, n)
     print("Den geometriska summan är: ", result_gs)
     break
-else:
-        print("Invalid input. Please enter 'a' or 'g'.")
