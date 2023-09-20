@@ -9,19 +9,23 @@ def g(g1, q, n): #geometic_series
         return series_sum
     return (sum_gs)
 
-choice = input("Do you want to callculate a arithmatic(a) or geometric(g) sequence/series")
-if choice.lower() == "a":
-    a1 = input ("What is the first term(a1)?")
-    d = input("What is the difference(d)?")
-    n = input("what is the number(n) of terms?")
-    result_as = a(a1, d, n)
-    print("Den aritmetiska summan är: ",result_as)
 
-else:
-    g1 = input("What is the first term(g1)?")
-    q = input("What is the factor(q)?")
-    n = input("what is the number(n) of terms?")
-    result_gs = g(g1, q, n)
-    print("Den geometriska summan är: ",result_gs)
+while True:
+    choice = input("Do you want to callculate a arithmatic(a) or geometric(g) sequence/series")
+    if choice == "g":
+        g1 = input("What is the first term(g1)?")
+        q = input("What is the factor(q)?")
+        n = input("what is the number(n) of terms?")
+        result_gs = g(g1, q, n)
+        print("Den geometriska summan är: ", result_gs)
+        break
 
-
+    elif choice == "a":
+        a1 = input("What is the first term(a1)?")
+        d = input("What is the difference(d)?")
+        n = input("what is the number(n) of terms?")
+        result_as = a(a1, d, n)
+        print("Den aritmetiska summan är: ", result_as)
+        break
+    else:
+        print("Invalid input. Please enter 'a' or 'g'.")
