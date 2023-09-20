@@ -1,13 +1,14 @@
-def 4_square(x):
+def square(x):
     return (x*x)
 
 x = 0
 
-input = float(input("what is the side length: "))
+user_input = input("Enter a number: ")
 
-input = float(x)
+# Converting the input string to an integer
+x = int(user_input)
+
 
 area = (x*x)
 
 print (area)
-print (x)
