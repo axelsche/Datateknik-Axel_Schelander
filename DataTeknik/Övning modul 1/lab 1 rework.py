@@ -9,6 +9,7 @@ def g(g1, q, n): #geometic_series
         return series_sum
     return (sum_gs)
 
+
 while True:
     a1 = input("What is the first term(a1)?")
     d = input("What is the difference(d)?")
