@@ -1,23 +1,28 @@
-def square(x):
-    return (x*x)
+"""Ett program som illustrerar funktionsuppdelningen i att gå"""
 
-def circle(x):
-    return(x*x*3.14)
+def take_step_fwd():
+    """En funktion som anropar funktionerna som behövs för att ta ett steg"""
+    lift_leg("vänster")
+    lean_body("framåt")
+    lift_leg("höger")
+    lean_body("bakåt")
 
-x = 0
+def lift_leg(the_leg):
+    """Lyfter ett ben, the_leg anger höger eller vänster"""
+    print(f"lyft {the_leg} ben")
 
-input_shape = input("what shape is the object? square or circle")
-user_input = input("what is the radius/side length: ")
+def lean_body(direction):
+    """Luta kroppen, direction anger riktning"""
+    print(f"luta kroppen {direction}")
 
-# Converting the input string to an integer
-x = int(user_input)
+def walk_two_steps():
+    """En funktion som tar två steg framåt"""
+    take_step_fwd()
+    take_step_fwd()
 
-areaS = (x*x)
-areaC = (x*x*3.14)
+walk_two_steps()
 
-if input_shape == square:
-    print (areaS)
-else:
-    print(areaC)
 
+
+#diska (handdisk, då diskmaskinen inte är så utmanande, vi såg en algoritm på föreläsningen).
 
