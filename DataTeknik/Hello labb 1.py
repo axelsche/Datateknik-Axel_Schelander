@@ -1,4 +1,4 @@
-def 4_square(x*x):
+def 4_square(x):
     return (x*x)
 
 x = 0
