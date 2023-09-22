@@ -12,7 +12,7 @@ def series_sum_geometric(G1, Q, N):
         ssg = G1 * (1 - Q ** N) / (1 - Q)
         return ssg
 
-import float_input #importerar min modul som kollar om värdet är ett reelt tal
+
 print("variabler för den aritmetiska summan:")
 A1 = float_input.get_float_input("A1: ")
 D = float_input.get_float_input("D: ")
@@ -23,7 +23,8 @@ Q = float_input.get_float_input("Q: ")
 
 print("")
 
-import integer_input # importerar min modul som kollar om värdet är ett reelt heltal
+from DataTeknik.Moduler import integer_input
+
 print ("Antal termer i summorna(Heltal):")
 N = integer_input.get_integer_input("n: ")
 
