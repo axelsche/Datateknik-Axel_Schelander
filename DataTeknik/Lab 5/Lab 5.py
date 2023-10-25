@@ -9,7 +9,7 @@ def search_student_by_id(student_list, id_number_to_find):
 #startar listan med studentinformation
 school = []
 
-# Ask the user how many students they want to add
+# Ger användaren möjligheten att välja hur många elvers information som ska mattas in
 num_students = integer_input.get_integer_input("Hur många elevers information vill du skriva-in? ")
 
 # Loop för input av studentinformation
@@ -22,18 +22,18 @@ for i in range(num_students):
     print("")
 
 
-    # Create a dictionary to store the student's information
+    #skapar student uppslagsvärket
     student_info = {
         "first_name": first_name,
         "last_name": last_name,
         "id_number": id_number
     }
 
-    # lägertill studentinformationen till listan skapad tidigare
+    # lägertill studentinformationen till school skapad tidigare
     school.append(student_info)
 
 
-# funktionen som låter användare söka efter elever i listan  med deras personnummer
+# funktionen som låter användare söka efter elever i uppslagsvärket med deras personnummer
 def search_student_by_id(student_list, id_number_to_find):
     for student in student_list:
         if student["id_number"] == id_number_to_find:
@@ -42,7 +42,7 @@ def search_student_by_id(student_list, id_number_to_find):
 
 
 while True:
-    # Ask the user if they want to search for a student or print the list
+    # frågar användaren om den vill söka efter elever i upslagsvörket
     listinput = input("Vill du söka efter elever i listan? ja (j) nej (n): ")
 
     if listinput.lower() == 'j':
