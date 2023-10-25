@@ -9,7 +9,7 @@ def series_sum_geometric(G1, Q, N):
     if Q == 1:
         return G1 * N
     else:
-        ssg = G1 * (1 - Q ** N) / (1 - Q)
+        ssg = G1 * (1 - Q ^ N) / (1 - Q)
         return ssg
 
 import float_input #importerar min modul som kollar om värdet är ett reelt tal
@@ -19,8 +19,7 @@ D = float_input.get_float_input("D: ")
 print("variabler för den geometriska summan:")
 print("")
 G1 = float_input.get_float_input("G1: ")
-Q = float_input.get_float_input("Q: ")
-
+Q = input("q: ")
 print("")
 
 import integer_input # importerar min modul som kollar om värdet är ett reelt heltal

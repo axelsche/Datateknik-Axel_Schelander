@@ -9,6 +9,8 @@ def search_student_by_id(student_list, id_number_to_find):
 #startar listan med studentinformation
 school = []
 
+
+
 # Ger användaren möjligheten att välja hur många elvers information som ska mattas in
 num_students = integer_input.get_integer_input("Hur många elevers information vill du skriva-in? ")
 
