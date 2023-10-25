@@ -1,5 +1,6 @@
 import integer_input  # Importera modulen för heltal
 
+
 # Skapa en funktion för att söka efter studenter med ID
 def sök_student_efter_id(studentlista, id_nummer_att_hitta):
     for student in studentlista:
@@ -7,11 +8,13 @@ def sök_student_efter_id(studentlista, id_nummer_att_hitta):
             return student
     return None
 
+
 # Skapa en lista för school
 school = []
 
 # Skapa en tom dictionary för studentinformation
 student_info = {}
+
 
 # Ladda studentdata från en fil
 def ladda_student_data():
@@ -32,14 +35,14 @@ def ladda_student_data():
     except FileNotFoundError:
         print("Ingen tidigare sparad studentinformation hittades.")
 
-# Ladda studentdata från en tidigare session
-ladda_student_data()
+
+ladda_student_data()  # Ladda studentdata från en tidigare session
 
 while True:
     print("Välj ett alternativ:")
     print("1. Importera studentinformation från fil")
     print("2. Lägg till studenter manuellt")
-    print("3. Inge fler elever att läggatill")
+    print("3. Inge fler elever att lägga till")
 
     val = input("Ange ditt val (1/2/3): ")
 
@@ -81,7 +84,7 @@ while True:
                 # Skapa en kopia av dictionary och lägg till den i listan school
                 school.append(dict(student_info))
 
-                # Skriv studentdatan till filen
+                # Skriv student data till filen
                 fil.write(student_info["id_number"] + "\n")
                 fil.write(student_info["last_name"] + "\n")
                 fil.write(student_info["first_name"] + "\n")
@@ -114,22 +117,21 @@ while True:
         # Om användaren inte vill söka efter studenter, skriv ut hela listan med studenter och avsluta loopen
         print("Studentlistan:")
         for student in school:
-            print("Namn: {} {}, Personnummer: {}".format(student["first_name"], student["last_name"], student["id_number"]))
+            print("Namn: {} {}, Personnummer: {}".format(student["first_name"], student["last_name"],
+                                                         student["id_number"]))
         break
     else:
         # Om användaren anger ett felaktigt val (inte 'n' eller 'j'), uppmanas de att ange 'n' eller 'j' igen
         print("Ogiltigt val, ange (j) eller (n) för att fortsätta.")
 
-
-
-#Komentarer angående koden
+# Kommentarer angående koden
 """Vilka nackdelar och fördelar finns det med olika behållare"""
-"""denom att använda ett upslagsvörk kan den informationen som är satt till en viss ellev eller objekt i koden avöndas som 
-sökmål för skningar i koden som i detta fall för att söka efter namn med the länkade personnummer, det skulle vara lättare att skriva 
-T.ex en list men detta skulle kräva att en lista per student var skappad i en störe lista där studentens lista (student1 list)
-är det som kallas på istälet för ellevens namn eller personnummer"""
+"""Genom att använda ett uppslagsverk kan den informationen som är satt till en viss student eller objekt i koden 
+används som sökmål för sökningar i koden som i detta fall för att söka efter namn med the länkade personnummer, 
+det skulle vara lättare att skriva T.ex en list men detta skulle kräva att en lista per student var skapad i en störe 
+lista där studentens lista (student1 list) är det som kallas på istället för elevens namn eller personnummer"""
 
-"""Ja använder hashtag komentarer i koden för att det ska gå att skilja på print text och komentarer"""
+"""Ja använder hashtag kommentarer i koden för att det ska gå att skilja på print text och kommentarer"""
 
-"""jag anv'nder format föt att ha mer kontrol när det kommer till hur jag printar eftersom jag tar in efternamn
-och förnamn individuelt istälet för ett namn"""
+"""jag använder format föt att ha mer kontrol när det kommer till hur jag printar eftersom jag tar in efternamn
+och förnamn individual istället för ett namn"""
