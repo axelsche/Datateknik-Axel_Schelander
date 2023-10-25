@@ -119,3 +119,17 @@ while True:
     else:
         # Om användaren anger ett felaktigt val (inte 'n' eller 'j'), uppmanas de att ange 'n' eller 'j' igen
         print("Ogiltigt val, ange (j) eller (n) för att fortsätta.")
+
+
+
+#Komentarer angående koden
+"""Vilka nackdelar och fördelar finns det med olika behållare"""
+"""denom att använda ett upslagsvörk kan den informationen som är satt till en viss ellev eller objekt i koden avöndas som 
+sökmål för skningar i koden som i detta fall för att söka efter namn med the länkade personnummer, det skulle vara lättare att skriva 
+T.ex en list men detta skulle kräva att en lista per student var skappad i en störe lista där studentens lista (student1 list)
+är det som kallas på istälet för ellevens namn eller personnummer"""
+
+"""Ja använder hashtag komentarer i koden för att det ska gå att skilja på print text och komentarer"""
+
+"""jag anv'nder format föt att ha mer kontrol när det kommer till hur jag printar eftersom jag tar in efternamn
+och förnamn individuelt istälet för ett namn"""
