@@ -1,6 +1,5 @@
 import integer_input  # Importera modulen för heltal
 
-
 # Skapa en funktion för att söka efter studenter med ID
 def sök_student_efter_id(studentlista, id_nummer_att_hitta):
     for student in studentlista:
@@ -19,7 +18,7 @@ student_info = {}
 # Ladda studentdata från en fil
 def ladda_student_data():
     try:
-        with open("students.txt", 'r') as fil:
+        with open("student.txt", 'r') as file:
             linjer = fil.readlines()
 
             # Bearbeta data från filen i set om tre rader
@@ -36,6 +35,36 @@ def ladda_student_data():
         print("Ingen tidigare sparad studentinformation hittades.")
 
 
+# Skapa en funktion för att redigera studentinformation
+def redigera_student(studentlista, id_nummer_att_redigera):
+    for student in studentlista:
+        if student["id_number"] == id_nummer_att_redigera:
+            print("Nuvarande information för student:")
+            print("Namn: {} {}".format(student["first_name"], student["last_name"]))
+            print("Personnummer: {}".format(student["id_number"]))
+
+            # Låt användaren redigera informationen
+            student["first_name"] = input("Ange det nya förnamnet: ")
+            student["last_name"] = input("Ange det nya efternamnet: ")
+            student["id_number"] = input("Ange det nya personnumret: ")
+
+            print("Studentinformation har redigerats.")
+            return
+
+    print("Studenten med det angivna personnumret är inte en del av studentlistan.")
+
+
+# Skapa en funktion för att radera studentinformation
+def radera_student(studentlista, id_nummer_att_radera):
+    for student in studentlista:
+        if student["id_number"] == id_nummer_att_radera:
+            studentlista.remove(student)
+            print("Studentinformation har raderats.")
+            return
+
+    print("Studenten med det angivna personnumret är inte en del av studentlistan.")
+
+
 ladda_student_data()  # Ladda studentdata från en tidigare session
 
 while True:
@@ -43,8 +72,11 @@ while True:
     print("1. Importera studentinformation från fil")
     print("2. Lägg till studenter manuellt")
     print("3. Inge fler elever att lägga till")
+    print("4. Redigera studentinformation")
+    print("5. Radera studentinformation")
+    print("6. Avsluta")
 
-    val = input("Ange ditt val (1/2/3): ")
+    val = input("Ange ditt val (1/2/3/4/5/6): ")
 
     if val == '1':
         # Be användaren om sökväg till filen
@@ -95,8 +127,22 @@ while True:
         print("Programmet avslutas.")
         break
 
+    if val == '4':
+        # Låt användaren ange personnummer för att redigera studentinformation
+        id_nummer_att_redigera = input("Ange personnumret för studenten du vill redigera: ")
+        redigera_student(school, id_nummer_att_redigera)
+
+    elif val == '5':
+        # Låt användaren ange personnummer för att radera studentinformation
+        id_nummer_att_radera = input("Ange personnumret för studenten du vill radera: ")
+        radera_student(school, id_nummer_att_radera)
+
+    elif val == '6':
+        print("Programmet avslutas.")
+        break
+
     else:
-        print("Ogiltigt val. Ange 1, 2 eller 3.")
+        print("Ogiltigt val. Ange 1, 2, 3, 4, 5 eller 6.")
 
 while True:
     # Fråga användaren om de vill söka efter studenter i listan
